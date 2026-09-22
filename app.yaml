@@ -1,0 +1,12 @@
+command:
+  - python
+  - app.py
+
+# Allow public access without authentication
+unauthenticatedAccess: allow
+
+env:
+  - name: SUPABASE_URL
+    value: "https://tzrcjamabhduxezmeyze.supabase.co"
+  - name: SUPABASE_KEY
+    value: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR6cmNqYW1hYmhkdXhlem1leXplIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzcxMTAzMTEsImV4cCI6MjA1MjY4NjMxMX0.TUTbnmQmJbT5K7OnBNKJkqYv1SosCIU3-oJcSc5N8lw"

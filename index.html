@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Help Hub - Community Support</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Financial Help Hub</h1>
+            <p class="tagline">"A place to share a genuine need and connect with people who may be able to help."</p>
+            <nav class="nav">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#need-help" class="nav-link">Need Help</a>
+                <a href="#help-someone" class="nav-link">Help Someone</a>
+                <a href="#about" class="nav-link">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="section home-section active">
+        <div class="container">
+            <!-- CTA Section -->
+            <div class="cta-box">
+                <h2>Need Financial Help?</h2>
+                <p>Share your situation and let the community know how they may be able to support you.</p>
+                <button class="btn btn-primary" onclick="showSection('need-help')">Post a Help Request</button>
+            </div>
+
+            <!-- Help Requests -->
+            <div class="requests-section">
+                <h2>People Seeking Help</h2>
+                <p class="demo-notice">⚠️ All requests below are <strong>fictional demo examples</strong> for demonstration purposes only.</p>
+                <div id="requestsGrid" class="requests-grid">
+                    <!-- Cards will be loaded by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Need Help Section -->
+    <section id="need-help" class="section">
+        <div class="container">
+            <h2>Post a Help Request</h2>
+            <p class="demo-notice">⚠️ This is a prototype. Submitted information is <strong>not permanently stored</strong> and will only display temporarily in your browser.</p>
+            
+            <form id="helpRequestForm" class="help-form">
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="district">District (Tamil Nadu) *</label>
+                    <select id="district" name="district" required>
+                        <option value="">Select District</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Coimbatore">Coimbatore</option>
+                        <option value="Madurai">Madurai</option>
+                        <option value="Salem">Salem</option>
+                        <option value="Trichy">Trichy</option>
+                        <option value="Tirunelveli">Tirunelveli</option>
+                        <option value="Erode">Erode</option>
+                        <option value="Vellore">Vellore</option>
+                        <option value="Thanjavur">Thanjavur</option>
+                        <option value="Kanyakumari">Kanyakumari</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category *</label>
+                    <select id="category" name="category" required>
+                        <option value="">Select Category</option>
+                        <option value="Medical">Medical Treatment</option>
+                        <option value="Education">Education</option>
+                        <option value="Emergency">Emergency</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="amount">Amount Needed (₹) *</label>
+                    <input type="number" id="amount" name="amount" min="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact">Phone or Email *</label>
+                    <input type="text" id="contact" name="contact" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="shortDesc">Short Description *</label>
+                    <input type="text" id="shortDesc" name="shortDesc" maxlength="100" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Detailed Message *</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="photo">Photo (optional)</label>
+                    <input type="file" id="photo" name="photo" accept="image/*">
+                    <small>Photo will not be uploaded to any server</small>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit Demo Request</button>
+            </form>
+
+            <div id="formSuccess" class="success-message" style="display: none;">
+                <p>✓ Your demo help request has been created and displayed on the home page.</p>
+                <button class="btn" onclick="showSection('home')">View All Requests</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Help Someone Section -->
+    <section id="help-someone" class="section">
+        <div class="container">
+            <h2>Want to Help Someone?</h2>
+            <div class="info-box">
+                <p>Read a request, understand the person's situation, and contact them directly if you choose to offer assistance.</p>
+            </div>
+            
+            <div class="warning-box">
+                <h3>⚠️ Important Safety Notice</h3>
+                <p>Please <strong>independently verify any request</strong> before sending money. Financial Help Hub does not verify, guarantee, or process donations.</p>
+            </div>
+
+            <button class="btn btn-primary" onclick="showSection('home')">Browse Help Requests</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Financial Help Hub</h2>
+            <div class="info-box">
+                <p>Financial Help Hub is designed as a simple platform concept where people can share genuine needs and connect with others who may be able to help.</p>
+                <p>This is a demonstration prototype to showcase the interface and user experience. All requests shown are fictional examples.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Request Details -->
+    <div id="requestModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div id="modalBody">
+                <!-- Content will be loaded by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h3>Financial Help Hub</h3>
+            <p>Community support starts with understanding a genuine need.</p>
+            <div class="disclaimer">
+                <strong>Disclaimer:</strong> This website is a demonstration prototype. Requests shown on this website are fictional examples. Any real financial assistance should be independently verified before money is sent.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
